@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--
+Copyright 2010 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Original slides:
+    Marcin Wichary (mwichary)
+
+Modifications:
+    Ernest Delgado (ernestd)
+    Alex Russell (slightlyoff)
+    Mihai Ionescu (mihai)
+    Arne Roomann-Kurrik (kurrik)
+Developed from page:
+	http://html5apps-io2010.appspot.com/#slide32
+Modifications:
+	Saxomo
+-->
+<html>
+<head>
+<title>HTML5/CSS3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="jquery.min.js"></script>
+<link rel="stylesheet" href="style.css" />
+<link href='http://fonts.googleapis.com/css?family=Molengo|Yanone+Kaffeesatz|Droid+Serif|OFL+Sorts+Mill+Goudy+TT|Inconsolata|Lobster|Cantal|Josefin+Sans+Std+Light' rel='stylesheet' type='text/css'>
+</head>
+<body>
+ 	<div class="slide transitionSlide" id="slide-preflight">
+		<div class="slide current" id="slide-logo">
+  			<header>
+                <span class="chromabrush">
+                    Chromabrush
+            	</span> Logo Creator (open with Chrome)
+             </header>
+  			 <section class="flex vbox boxcenter">
+    			<pre>
+<b>logo text</b>:  <input type="text" value="Logo-text" name="logoText">  
+
+<b>font-family</b>: <span class="controls"><input checked="checked" type="radio" value="Molengo" name="logoFont"> Molengo  <input type="radio" value="Droid Serif" name="logoFont"> Droid Serif <input type="radio" value="Cantal" name="logoFont"> Cantal <input type="radio" value="Lobster" name="logoFont"> Lobster <input type="radio" value="Josefin Sans Std Light" name="logoFont"> Josefin</span>
+
+<b>color</b>: <span id="logoColor">hsl(215,50%,0%)</span>; <span class="controls"><em>H</em>: <input id="logoHueSlider" type="range" min="0" max="255" value="215"> <em>S</em>: <input id="logoSatSlider" type="range" min="0" max="100" value="50"> <em>L</em>: <input id="logoLitSlider" type="range" min="0" max="100" value="0"></span>
+<b>background-color</b>: <span id="logoBgColor">hsl(244,100%,70%)</span>; <span class="controls"><em>H</em>: <input id="logoBgHueSlider" type="range" min="0" max="255" value="50"> <em>S</em>: <input id="logoBgSatSlider" type="range" min="0" max="100" value="50"> <em>L</em>: <input id="logoBgLitSlider" type="range" min="0" max="100" value="100"></span>
+<b>border-color</b>: <span id="logoBorderColor">hsl(244,100%,70%)</span>; <span class="controls"><em>H</em>: <input id="logoBHueSlider" type="range" min="0" max="255" value="50"> <em>S</em>: <input id="logoBSatSlider" type="range" min="0" max="100" value="50"> <em>L</em>: <input id="logoBLitSlider" type="range" min="0" max="100" value="100"></span>
+<b>font-size</b>: <span id="logoSize">20px;</span> <span class="controls"><em>Font Size</em>: <input id="logoFontSize" type="range" min="22" max="188" value="40"></span> 
+<b>border-width</b>: <span id="borderSize">1px</span>;  <span class="controls"><em>Border Size</em>: <input id="logoBorderSize" type="range" min="0" max="42" value="1"></span>
+<b>-webkit-box-reflect</b>: below 10px -webkit-gradient(
+     linear, left top, left bottom,
+     from(transparent), to(rgba(255, 255, 255, <span id="logoReflect">0.48</span>)));  <span class="controls"><em>Reflection</em>: <input id="logoReflectSlider" type="range" min="0" max="100" value="0"></span>
+<b>text-shadow</b>: <span id="logoShadow">rgba(0, 0, 0, 0.9) 0 4px 4px</span>;  <span class="controls"><em>Shadow</em>: <input id="logoShadowSlider" type="range" min="0" max="9" value="0"></span>
+<b>border-radius</b>: <span id="logoRadius">24px</span>; <span class="controls"><em>Radius</em>: <input id="logoRadiusSlider" type="range" min="0" max="80" value="0"></span>
+<b>-webkit-transform:</b>: <span id="logoRotate">rotate(-10deg)</span>; <span class="controls"><em>Rotation</em>: <input id="logoRotation" type="range" min="-20" max="20" value="0"></span>
+				</pre>
+				<div>
+					<div id="logoCode">
+                    </div>  
+    				<div class="hcenter" align="center">
+   			 			<div id="logoOutput" style="display: inline-block;padding:10px;border:thick solid black; borcolor: rgb(0, 0, 0); -webkit-box-reflect: below 10px -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), to(rgba(255, 255, 255, 0.476563))) 0 0 0 0 stretch stretch; background-color: rgb(112, 102, 255); font-family: 'Josefin Sans Std Light'; text-shadow: rgba(0, 0, 0, 0.898438) 0px 4px 4px; border-top-left-radius: 24px 24px; border-top-right-radius: 24px 24px; border-bottom-right-radius: 24px 24px; border-bottom-left-radius: 24px 24px; "><div id="textRotate" style="-webkit-transform:rotate(0deg);">
+    						Logo-text
+    					</div>
+   					</div>
+    			</div>
+            </section>
+		</div>
+	</div>
+<script>
+	function getCode(){	 
+		var t =   $('.hcenter').html()  ;
+		$('#logoCode').text(t);	
+	}
+	function logoChangeText(evt){
+  		$('#textRotate').html( evt.target.value);
+  		getCode();
+	};
+	function logoFontSize(evt){
+		var s = $('#logoFontSize').val(); 
+		var css= s +"px";
+  		$('#logoOutput').css( 'font-size', css );
+		$('#logoSize').html(css+";");
+		 getCode(); 
+	};
+	function logoBorderSize(evt){
+		var s = $('#logoBorderSize').val(); 
+		var css= s +"px";
+  		$('#logoOutput').css( 'border-width', css );
+		$('#borderSize').html(css); 
+		 getCode();
+	};
+	function logoChangeFont(evt){
+  		$('#logoOutput').css('font-family', '"' + evt.target.value + '"');
+  		 getCode();
+	};
+
+	function logoChangeColor(evt) {
+  		var h = $('#logoHueSlider').val();
+  		var s = $('#logoSatSlider').val();
+  		var l = $('#logoLitSlider').val();
+  		var color = "hsl(" + h + "," + s + "%," + l + "%)";
+  		$('#logoOutput').css('color', color);
+  		$('#logoColor').text(color);
+   		getCode();
+	};
+	function logoChangeBorderColor(evt) {
+  		var h = $('#logoBHueSlider').val();
+  		var s = $('#logoBSatSlider').val();
+  		var l = $('#logoBLitSlider').val();
+  		var color = "hsl(" + h + "," + s + "%," + l + "%)";
+  		$('#logoOutput').css('border-color', color);
+  		$('#logoBorderColor').text(color);
+   		getCode();
+	};
+
+	function logoChangeBgColor(evt) {
+  		var h = $('#logoBgHueSlider').val();
+  		var s = $('#logoBgSatSlider').val();
+  		var l = $('#logoBgLitSlider').val();
+  		var color = "hsl(" + h + "," + s + "%," + l + "%)";
+  		$('#logoOutput').css('background-color', color);
+  		$('#logoBgColor').text(color);
+   		getCode();
+	};
+
+	function logoChangeReflect(evt) {
+  		var r = $('#logoReflectSlider').val() / 100;
+  		$('#logoOutput').css('-webkit-box-reflect',
+    	"below 10px -webkit-gradient(linear, left top, left bottom, " +
+    	"from(transparent), to(rgba(255, 255, 255, " + r + ")))");
+  		$('#logoReflect').text(r);
+   		getCode();
+	};
+
+	function logoChangeShadow(evt) {
+  		var s = $('#logoShadowSlider').val();
+  		var css = "rgba(0, 0, 0, 0.9) 0 " + s + "px " + s + "px";
+  		$('#logoOutput').css('text-shadow', css);
+  		$('#logoShadow').text(css);
+   		getCode();
+	};
+
+	function logoChangeRadius(evt) {
+  		var r = $('#logoRadiusSlider').val();
+  		var css = r + "px";
+  		$('#logoOutput').css('border-radius', css);
+  		$('#logoRadius').text(css);
+   		getCode();
+	};
+	function logoRotation(evt) {
+  		var r = $('#logoRotation').val();
+  		var css = 'rotate(' + r + 'deg)';
+  		$('#textRotate').css('-webkit-transform', css);
+  		$('#logoRotate').html(css); 
+   		getCode();
+	};
+
+	$(document).ready(function() {
+		$('input[type=text]').bind('blur', logoChangeText);
+		$('#logoFontSize').bind('change', logoFontSize);
+		$('#logoBorderSize').bind('change', logoBorderSize);
+		$('#slide-logo input[type=radio]').bind('click', logoChangeFont);
+		$('#logoHueSlider').bind('change', logoChangeColor);
+		$('#logoSatSlider').bind('change', logoChangeColor);
+		$('#logoLitSlider').bind('change', logoChangeColor);
+		$('#logoBHueSlider').bind('change', logoChangeBorderColor);
+		$('#logoBSatSlider').bind('change', logoChangeBorderColor);
+		$('#logoBLitSlider').bind('change', logoChangeBorderColor);
+		$('#logoBgHueSlider').bind('change', logoChangeBgColor);
+		$('#logoBgSatSlider').bind('change', logoChangeBgColor);
+		$('#logoBgLitSlider').bind('change', logoChangeBgColor);
+		$('#logoReflectSlider').bind('change', logoChangeReflect);
+		$('#logoShadowSlider').bind('change', logoChangeShadow);
+		$('#logoRadiusSlider').bind('change', logoChangeRadius);
+		$('#logoRotation').bind('change', logoRotation);
+		logoChangeText();
+		logoFontSize();
+		logoBorderSize();
+		logoChangeFont();
+		logoChangeColor();
+		logoChangeBgColor();
+		logoChangeBorderColor();
+		logoChangeReflect();
+		logoChangeShadow();
+		logoChangeRadius();
+		logoRotation();
+	});
+</script>
+</body>
+</html>
