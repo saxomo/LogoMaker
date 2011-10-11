@@ -1,0 +1,135 @@
+/**
+ * Copyright 2010 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+/*******************************************************************************
+ * PRESENTATION STYLES
+ ******************************************************************************/
+body {
+  font: 30px Arial;
+  background: #000;
+}
+
+header {
+  font: 44px Arial;
+  letter-spacing: -.05em;
+  color: #000;
+  font-weight: normal;
+  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+}
+
+section {
+  font: 30px Arial;
+  font-weight: normal;
+  color: #3f3f3f;
+  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+}
+
+
+ 
+
+/*******************************************************************************
+ * GENERIC STYLES
+ ******************************************************************************/
+ 
+
+pre {
+  font: 20px 'Inconsolata';
+  color: #000;
+  text-align: left;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: rgba(0, 255, 0, 0.05);
+  border: 2px solid rgba(0, 255, 0, 0.2);
+}
+
+pre b {
+  font-weight: normal;
+  color: #c61800;
+  text-shadow: #c61800 0 0 1px;
+  letter-spacing: -1px;
+}
+
+pre em {
+  font-weight: normal;
+  font-style: normal;
+  color: #18a600;
+  text-shadow: #18a600 0 0 1px;
+}
+
+ 
+ 
+.todo {
+  background: #d00;
+  border-radius: 10px;
+  padding: 5px;
+  color: #fff;
+}
+
+ 
+ 
+/*******************************************************************************
+ * PREFLIGHT STYLES
+ ******************************************************************************/
+ 
+#slide-preflight section {
+  width: 80%;
+  margin: 0 auto;
+}
+ 
+/*******************************************************************************
+ * LOGO STYLES
+ ******************************************************************************/
+#slide-logo {
+  background: #fff;
+}
+ 
+
+/*******************************************************************************
+ * DEMO STYLES
+ ******************************************************************************/
+ 
+.chromabrush {
+  font-family: 'Josefin Sans Std Light';
+}
+
+
+/*******************************************************************************
+ * LOGO STYLES
+ ******************************************************************************/
+#logoOutput {
+  font-size: 60px;
+  text-align: center;
+  font-family: 'Molengo';
+  display: inline-block;
+  margin: 20px auto 0 auto;
+  padding: 10px;
+}
+#logoCode{
+	border-radius: 10px;
+	color:white;
+	background-color:#033;
+	width:600px;
+	 font: 10px 'Inconsolata';
+	float:left;}
+#slide-logo .controls {
+  position: absolute;
+  right: 12%;
+}
+
+#slide-logo .controls input[type=range] {
+  width: 80px;
+}
