@@ -31,19 +31,132 @@ Modifications:
 <head>
 <title>HTML5/CSS3</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<script src="jquery.min.js"></script>
-<link rel="stylesheet" href="style.css" />
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Molengo|Yanone+Kaffeesatz|Droid+Serif|OFL+Sorts+Mill+Goudy+TT|Inconsolata|Lobster|Cantal|Josefin+Sans+Std+Light' rel='stylesheet' type='text/css'>
+<style type="text/css">
+ <!--
+body {
+  font: 30px Arial;
+  background: #000;
+}
+
+header {
+  font: 44px Arial;
+  letter-spacing: -.05em;
+  color: #000;
+  font-weight: normal;
+  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+}
+
+section {
+  font: 30px Arial;
+  font-weight: normal;
+  color: #3f3f3f
+  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+}
+
+/*******************************************************************************
+ * GENERIC STYLES
+ ******************************************************************************/ 
+
+pre {
+  font: 20px 'Inconsolata';
+  color: #000;
+  text-align: left;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: rgba(0, 255, 0, 0.05);
+  border: 2px solid rgba(0, 255, 0, 0.2);
+}
+
+pre b {
+  font-weight: normal;
+  color: #c61800;
+  text-shadow: #c61800 0 0 1px;
+  letter-spacing: -1px;
+}
+
+pre em {
+  font-weight: normal;
+  font-style: normal;
+  color: #18a600;
+  text-shadow: #18a600 0 0 1px;
+}
+ 
+.todo {
+  background: #d00;
+  border-radius: 10px;
+  padding: 5px;
+  color: #fff;
+}
+
+/*******************************************************************************
+ * PREFLIGHT STYLES
+ ******************************************************************************/
+ 
+#slide-preflight section {
+  width: 80%;
+  margin: 0 auto;
+}
+ 
+/*******************************************************************************
+ * LOGO STYLES
+ ******************************************************************************/
+#slide-logo {
+  background: #fff;
+}
+ 
+/*******************************************************************************
+ * DEMO STYLES
+ ******************************************************************************/
+ 
+.chromabrush {
+  font-family: 'Josefin Sans Std Light';
+}
+
+/*******************************************************************************
+ * LOGO STYLES
+ ******************************************************************************/
+ 
+#logoOutput {
+  font-size: 60px;
+  text-align: center;
+  font-family: 'Molengo';
+  display: inline-block;
+  margin: 20px auto 0 auto;
+  padding: 10px;
+}
+
+#logoCode{
+  border-radius: 10px;
+  color:white;
+  background-color:#033;
+  width:600px;
+  font: 10px 'Inconsolata';
+  float:left;
+}
+	
+#slide-logo .controls {
+  position: absolute;
+  right: 12%;
+}
+
+#slide-logo .controls input[type=range] {
+  width: 80px;
+}
+
+-->
+</style>
 </head>
 <body>
- 	<div class="slide transitionSlide" id="slide-preflight">
+	<div class="slide transitionSlide" id="slide-preflight">
 		<div class="slide current" id="slide-logo">
   			<header>
                 <span class="chromabrush">
                     Chromabrush
             	</span> Logo Creator (open with Chrome)
-             </header>
-  			 <section class="flex vbox boxcenter">
+            </header>
+  			<section class="flex vbox boxcenter">
     			<pre>
 <b>logo text</b>:  <input type="text" value="Logo-text" name="logoText">  
 
@@ -100,7 +213,6 @@ Modifications:
   		$('#logoOutput').css('font-family', '"' + evt.target.value + '"');
   		 getCode();
 	};
-
 	function logoChangeColor(evt) {
   		var h = $('#logoHueSlider').val();
   		var s = $('#logoSatSlider').val();
